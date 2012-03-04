@@ -3,14 +3,14 @@
 #include "montecarlo.h"
 
 
-double Montecarlo::random(double a, double b)
+double MonteCarlo::random(double a, double b)
 {
     double n = (double) rand() / RAND_MAX;
     return n * (b - a) + a;
 }
 
 
-int Montecarlo::processNextPoint(double a, double b, double m)
+int MonteCarlo::processNextPoint(double a, double b, double m)
 {
     return this->func.isBelowCurve(
             this->random(a, b),
@@ -18,7 +18,7 @@ int Montecarlo::processNextPoint(double a, double b, double m)
 }
 
 
-long long Montecarlo::loop(long long n)
+long long MonteCarlo::loop(long long n)
 {
     double a = this->func.getRangeFrom();
     double b = this->func.getRangeTo();
@@ -34,7 +34,7 @@ long long Montecarlo::loop(long long n)
 }
 
 
-double Montecarlo::approximate(long long n)
+double MonteCarlo::approximate(long long n)
 {
     long long nb;
 

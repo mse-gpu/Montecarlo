@@ -31,7 +31,7 @@ class Sqrt2 : public Function
 int main(void)
 {
     PI pi;
-    Montecarlo mc(pi);
+    MonteCarlo mc(pi);
 
     std::cout << mc.approximate(99999999L) << std::endl;
 
