@@ -31,7 +31,7 @@ DEPS = $(OBJS:.o=.d)
 CFLAGS += $(INCLUDES)
 CXXFLAGS += $(INCLUDES)
 
-.PHONY: all info clean
+.PHONY: all info run $(TARGET) clean
 
 # Make the default target
 all: $(TARGET)
@@ -80,5 +80,5 @@ clean:
 	rm -f $(OBJS)
 	rm -f $(TARGET_PATH)
 ifneq ($(realpath $(BUILD_DIR)), $(realpath .))
-	find $(BUILD_DIR) -type d | sort -r | xargs rm -df
+	find $(BUILD_DIR) -type d 2>/dev/null | sort -r | xargs rmdir
 endif
